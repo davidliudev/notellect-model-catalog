@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://notellect.ai/schemas/model-catalog/v1.json",
+  "title": "Notellect provider and model catalog",
+  "type": "object",
+  "required": ["schemaVersion", "catalogVersion", "updatedAt", "featured", "providers"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "catalogVersion": { "type": "integer", "minimum": 1 },
+    "updatedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "featured": { "type": "array", "items": { "$ref": "#/$defs/id" }, "maxItems": 12 },
+    "providers": { "type": "array", "items": { "$ref": "#/$defs/provider" }, "minItems": 1, "maxItems": 200 }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,40}$" },
+    "text": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "url": { "type": "string", "pattern": "^https?://[^\\s]+$", "maxLength": 500 },
+    "provider": {
+      "type": "object",
+      "required": ["id", "name", "mark", "hue", "description", "auth", "adapter", "fields", "allowCustomModel", "models"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "mark": { "type": "string", "minLength": 1, "maxLength": 3 },
+        "hue": { "type": "integer", "minimum": 0, "maximum": 359 },
+        "neutral": { "type": "boolean" },
+        "aliases": { "type": "array", "items": { "type": "string", "minLength": 1, "maxLength": 60 }, "maxItems": 20 },
+        "description": { "$ref": "#/$defs/text" },
+        "auth": { "enum": ["signin", "api_key", "local", "custom"] },
+        "adapter": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,40}$" },
+        "baseUrl": { "$ref": "#/$defs/url" },
+        "fields": { "type": "array", "items": { "$ref": "#/$defs/field" }, "maxItems": 8 },
+        "keyHelp": {
+          "type": "object",
+          "required": ["url", "steps"],
+          "properties": {
+            "url": { "$ref": "#/$defs/url" },
+            "steps": { "type": "array", "items": { "$ref": "#/$defs/text" }, "minItems": 1, "maxItems": 5 }
+          }
+        },
+        "billedBy": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "allowCustomModel": { "type": "boolean" },
+        "models": { "type": "array", "items": { "$ref": "#/$defs/model" }, "maxItems": 60 }
+      }
+    },
+    "field": {
+      "type": "object",
+      "required": ["key", "kind", "label"],
+      "properties": {
+        "key": { "type": "string", "pattern": "^[a-z][a-z0-9_]{1,40}$" },
+        "kind": { "enum": ["secret", "text", "url", "choice", "number"] },
+        "label": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "placeholder": { "type": "string", "maxLength": 120 },
+        "help": { "type": "string", "maxLength": 300 },
+        "required": { "type": "boolean" },
+        "default": { "type": ["string", "number", "boolean"] },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "required": ["value", "label"],
+            "properties": {
+              "value": { "type": "string", "minLength": 1, "maxLength": 500 },
+              "label": { "type": "string", "minLength": 1, "maxLength": 60 }
+            }
+          }
+        }
+      }
+    },
+    "thinkingLevel": {
+      "type": "object",
+      "properties": {
+        "thinking_enabled": { "type": "boolean" },
+        "thinking_strength": { "enum": ["auto", "minimal", "low", "medium", "high", "xhigh", "max"] },
+        "thinking_budget_tokens": { "type": "integer", "minimum": 1024, "maximum": 128000 }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "description": { "type": "string", "maxLength": 80 },
+        "recommended": { "type": "boolean" },
+        "quick": { "type": "boolean" },
+        "contextWindow": { "type": "integer", "minimum": 1024 },
+        "vision": { "type": "boolean" },
+        "thinking": {
+          "type": "object",
+          "properties": {
+            "off": { "$ref": "#/$defs/thinkingLevel" },
+            "standard": { "$ref": "#/$defs/thinkingLevel" },
+            "deep": { "$ref": "#/$defs/thinkingLevel" }
+          }
+        },
+        "retired": { "type": "boolean" },
+        "replacement": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "hidden": { "type": "boolean" }
+      }
+    }
+  }
+}

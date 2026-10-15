@@ -1,0 +1,12 @@
+{
+  "name": "notellect-model-catalog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs catalog.json",
+    "build": "node scripts/build.mjs catalog.json public"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  }
+}

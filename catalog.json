@@ -1,0 +1,1644 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": 1,
+  "updatedAt": "2026-10-15",
+  "featured": [
+    "claude_code",
+    "chatgpt",
+    "anthropic",
+    "openai",
+    "deepseek",
+    "qwen"
+  ],
+  "providers": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "mark": "GP",
+      "hue": 165,
+      "aliases": [
+        "openai",
+        "codex",
+        "gpt",
+        "subscription"
+      ],
+      "description": "Use your ChatGPT Plus, Pro or Business plan",
+      "auth": "signin",
+      "adapter": "openai_codex",
+      "fields": [],
+      "billedBy": "Your ChatGPT plan",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol",
+          "description": "Best for most work",
+          "recommended": true,
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "description": "Most capable, slower",
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "description": "Fast and focused",
+          "quick": true,
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "off": {
+              "thinking_enabled": false
+            },
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gpt-5.5",
+          "name": "GPT-5.5",
+          "description": "Retired from ChatGPT sign-in",
+          "retired": true,
+          "replacement": "gpt-6.1-sol",
+          "hidden": true
+        }
+      ]
+    },
+    {
+      "id": "claude_code",
+      "name": "Claude",
+      "mark": "Cl",
+      "hue": 40,
+      "aliases": [
+        "anthropic",
+        "claude code",
+        "subscription",
+        "max",
+        "pro"
+      ],
+      "description": "Use your Claude Pro or Max plan through Claude Code",
+      "auth": "signin",
+      "adapter": "claude_cli",
+      "fields": [],
+      "billedBy": "Your Claude plan",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "opus",
+          "name": "Opus (latest)",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "sonnet",
+          "name": "Sonnet (latest)",
+          "description": "Fast everyday work",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "haiku",
+          "name": "Haiku (latest)",
+          "description": "Fastest for simple tasks",
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "fable",
+          "name": "Fable",
+          "description": "Hardest, longest-running tasks",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic API",
+      "mark": "A",
+      "hue": 40,
+      "aliases": [
+        "claude"
+      ],
+      "description": "Claude models, billed per use",
+      "auth": "api_key",
+      "adapter": "anthropic",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-ant-…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://platform.claude.com/settings/keys",
+        "steps": [
+          "Sign in to the Claude Console",
+          "Open Settings → API keys and click Create key",
+          "Copy the key; it is shown only once"
+        ]
+      },
+      "billedBy": "Anthropic",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "claude-opus-5-5",
+          "name": "Claude Opus 5.5",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "name": "Claude Sonnet 5.5",
+          "description": "Fast and smart, everyday work",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "off": {
+              "thinking_enabled": false
+            },
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "name": "Claude Haiku 5.5",
+          "description": "Fastest and lowest cost",
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "off": {
+              "thinking_enabled": false
+            },
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "claude-fable-5-1",
+          "name": "Claude Fable 5.1",
+          "description": "Hardest reasoning, long tasks",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI API",
+      "mark": "O",
+      "hue": 165,
+      "aliases": [
+        "gpt",
+        "chatgpt"
+      ],
+      "description": "GPT models, billed per use",
+      "auth": "api_key",
+      "adapter": "openai_responses",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://platform.openai.com/api-keys",
+        "steps": [
+          "Sign in to the OpenAI Platform",
+          "Open API keys and click Create new secret key",
+          "Copy the key; add billing credit if asked"
+        ]
+      },
+      "billedBy": "OpenAI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "gpt-6.1-sol",
+          "name": "GPT-6.1 Sol",
+          "description": "Best balance of smarts and cost",
+          "recommended": true,
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gpt-6-astra",
+          "name": "GPT-6 Astra",
+          "description": "Best for complex work",
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gpt-6-luna",
+          "name": "GPT-6 Luna",
+          "description": "Fast and low cost",
+          "quick": true,
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "off": {
+              "thinking_enabled": false
+            },
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "name": "Google Gemini",
+      "mark": "G",
+      "hue": 255,
+      "aliases": [
+        "google",
+        "ai studio"
+      ],
+      "description": "Gemini models from Google AI Studio",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta/openai/",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "AIza…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://aistudio.google.com/apikey",
+        "steps": [
+          "Sign in to Google AI Studio",
+          "Click Create API key and pick a Google Cloud project",
+          "Copy the key"
+        ]
+      },
+      "billedBy": "Google",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "gemini-3.8-flash",
+          "name": "Gemini 3.8 Flash",
+          "description": "Fast, smart, great default",
+          "recommended": true,
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gemini-4-argon",
+          "name": "Gemini 4 Argon",
+          "description": "Best for complex reasoning",
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "gemini-3.5-flash-lite",
+          "name": "Gemini 3.5 Flash-Lite",
+          "description": "Fastest and lowest cost",
+          "quick": true,
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "mark": "DS",
+      "hue": 262,
+      "aliases": [
+        "深度求索"
+      ],
+      "description": "DeepSeek V4 models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.deepseek.com",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://platform.deepseek.com/api_keys",
+        "steps": [
+          "Sign in to the DeepSeek platform",
+          "Open API Keys and click Create new API key",
+          "Copy the key and top up your balance"
+        ]
+      },
+      "billedBy": "DeepSeek",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "deepseek-flash",
+          "name": "DeepSeek V4.1 Flash",
+          "description": "Fast, low cost, sees images",
+          "recommended": true,
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "deepseek-v4-pro",
+          "name": "DeepSeek V4 Pro",
+          "description": "Best for complex work",
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen",
+      "mark": "Q",
+      "hue": 285,
+      "aliases": [
+        "alibaba",
+        "aliyun",
+        "dashscope",
+        "bailian",
+        "通义",
+        "千问",
+        "阿里"
+      ],
+      "description": "Alibaba Cloud Model Studio (Bailian)",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-…"
+        },
+        {
+          "key": "base_url",
+          "kind": "choice",
+          "label": "Region",
+          "required": true,
+          "default": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+          "options": [
+            {
+              "value": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+              "label": "China (Beijing)"
+            },
+            {
+              "value": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+              "label": "International (Singapore)"
+            },
+            {
+              "value": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
+              "label": "US (Virginia)"
+            },
+            {
+              "value": "https://cn-hongkong.dashscope.aliyuncs.com/compatible-mode/v1",
+              "label": "China (Hong Kong)"
+            }
+          ]
+        }
+      ],
+      "keyHelp": {
+        "url": "https://bailian.console.aliyun.com/?tab=model#/api-key",
+        "steps": [
+          "Sign in to Model Studio and pick the same region as below",
+          "Open API Key and click Create API Key",
+          "Copy the key; keys only work in their own region"
+        ]
+      },
+      "billedBy": "Alibaba Cloud",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "qwen3.7-plus",
+          "name": "Qwen3.7 Plus",
+          "description": "Balanced quality and cost",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "qwen3.8-max",
+          "name": "Qwen3.8 Max",
+          "description": "Best for complex work",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "qwen3.8-flash",
+          "name": "Qwen3.8 Flash",
+          "description": "Fast and low cost",
+          "quick": true,
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "moonshot",
+      "name": "Kimi",
+      "mark": "K",
+      "hue": 0,
+      "neutral": true,
+      "aliases": [
+        "moonshot",
+        "月之暗面"
+      ],
+      "description": "Moonshot AI’s Kimi models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-…"
+        },
+        {
+          "key": "base_url",
+          "kind": "choice",
+          "label": "Region",
+          "required": true,
+          "default": "https://api.moonshot.cn/v1",
+          "options": [
+            {
+              "value": "https://api.moonshot.cn/v1",
+              "label": "China (moonshot.cn)"
+            },
+            {
+              "value": "https://api.moonshot.ai/v1",
+              "label": "International (moonshot.ai)"
+            }
+          ]
+        }
+      ],
+      "keyHelp": {
+        "url": "https://platform.moonshot.cn/console/api-keys",
+        "steps": [
+          "Sign in to the Kimi API platform for your region",
+          "Open API Keys and create a new key",
+          "Copy the key and add balance"
+        ]
+      },
+      "billedBy": "Moonshot AI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "kimi-k3",
+          "name": "Kimi K3",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "name": "Kimi K2.7 Code",
+          "description": "Best for coding",
+          "contextWindow": 262144,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "kimi-k2.7-code-highspeed",
+          "name": "Kimi K2.7 Code Highspeed",
+          "description": "Faster coding output",
+          "quick": true,
+          "contextWindow": 262144,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "zhipu",
+      "name": "Zhipu GLM",
+      "mark": "Z",
+      "hue": 240,
+      "aliases": [
+        "智谱",
+        "bigmodel",
+        "chatglm",
+        "z.ai"
+      ],
+      "description": "GLM models from Zhipu AI and Z.ai",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true
+        },
+        {
+          "key": "base_url",
+          "kind": "choice",
+          "label": "Region",
+          "required": true,
+          "default": "https://open.bigmodel.cn/api/paas/v4",
+          "options": [
+            {
+              "value": "https://open.bigmodel.cn/api/paas/v4",
+              "label": "China (bigmodel.cn)"
+            },
+            {
+              "value": "https://api.z.ai/api/paas/v4",
+              "label": "International (z.ai)"
+            }
+          ]
+        }
+      ],
+      "keyHelp": {
+        "url": "https://open.bigmodel.cn/usercenter/apikeys",
+        "steps": [
+          "Sign in to bigmodel.cn (or z.ai for International)",
+          "Open API Keys and create a new key",
+          "Copy the key; top up under Billing if needed"
+        ]
+      },
+      "billedBy": "Zhipu AI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "glm-5.3",
+          "name": "GLM-5.3",
+          "description": "Flagship for coding and agents",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "glm-5.3-flash",
+          "name": "GLM-5.3 Flash",
+          "description": "Sees images and video",
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "glm-5.3-flashx",
+          "name": "GLM-5.3 FlashX",
+          "description": "Fastest, sees images",
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "doubao",
+      "name": "Doubao",
+      "mark": "D",
+      "hue": 220,
+      "aliases": [
+        "豆包",
+        "火山",
+        "volcengine",
+        "ark",
+        "bytedance"
+      ],
+      "description": "ByteDance models on Volcengine Ark",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true
+        }
+      ],
+      "keyHelp": {
+        "url": "https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey",
+        "steps": [
+          "Sign in to the Volcengine Ark console",
+          "Open API Key management and create a key",
+          "Activate the Doubao models you want to use"
+        ]
+      },
+      "billedBy": "Volcengine",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "doubao-seed-2-1-pro-260915",
+          "name": "Doubao Seed 2.1 Pro",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 256000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "doubao-seed-2-1-turbo-260628",
+          "name": "Doubao Seed 2.1 Turbo",
+          "description": "Faster and lower cost",
+          "quick": true,
+          "contextWindow": 256000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "mark": "MM",
+      "hue": 350,
+      "aliases": [
+        "海螺",
+        "hailuo"
+      ],
+      "description": "MiniMax M-series models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true
+        },
+        {
+          "key": "base_url",
+          "kind": "choice",
+          "label": "Region",
+          "required": true,
+          "default": "https://api.minimax.io/v1",
+          "options": [
+            {
+              "value": "https://api.minimax.io/v1",
+              "label": "Global (minimax.io)"
+            },
+            {
+              "value": "https://api.minimax.cn/v1",
+              "label": "China (minimax.cn)"
+            }
+          ]
+        }
+      ],
+      "keyHelp": {
+        "url": "https://platform.minimax.io/user-center/basic-information/interface-key",
+        "steps": [
+          "Sign in to the MiniMax API platform",
+          "Open API Keys and click Create new secret key",
+          "Copy the key and top up under Billing"
+        ]
+      },
+      "billedBy": "MiniMax",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "MiniMax-M3",
+          "name": "MiniMax M3",
+          "description": "Multimodal, strong at coding",
+          "recommended": true,
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "mark": "OR",
+      "hue": 275,
+      "aliases": [
+        "router",
+        "aggregator"
+      ],
+      "description": "One key for hundreds of models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-or-…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://openrouter.ai/keys",
+        "steps": [
+          "Sign in to openrouter.ai",
+          "Open Keys and click Create Key",
+          "Copy the key and add credits"
+        ]
+      },
+      "billedBy": "OpenRouter",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "~anthropic/claude-sonnet-latest",
+          "name": "Claude Sonnet (latest)",
+          "description": "Strong all-rounder",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "~openai/gpt-sol-latest",
+          "name": "GPT Sol (latest)",
+          "description": "Balanced OpenAI model",
+          "contextWindow": 1050000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "google/gemini-4-argon",
+          "name": "Gemini 4 Argon",
+          "description": "Best for complex reasoning",
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "mark": "Mi",
+      "hue": 55,
+      "aliases": [
+        "le chat",
+        "codestral"
+      ],
+      "description": "Mistral models from Mistral AI",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true
+        }
+      ],
+      "keyHelp": {
+        "url": "https://console.mistral.ai/api-keys",
+        "steps": [
+          "Sign in to Mistral Studio",
+          "Activate a plan, then open API Keys",
+          "Click Create new key and copy it"
+        ]
+      },
+      "billedBy": "Mistral AI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "mistral-medium-latest",
+          "name": "Mistral Medium",
+          "description": "Best value for most work",
+          "recommended": true,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "mistral-large-latest",
+          "name": "Mistral Large",
+          "description": "Most capable",
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "mistral-small-2603",
+          "name": "Mistral Small 4",
+          "description": "Fast and low cost",
+          "quick": true,
+          "contextWindow": 256000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "mark": "x",
+      "hue": 0,
+      "neutral": true,
+      "aliases": [
+        "grok"
+      ],
+      "description": "Grok models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.x.ai/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "xai-…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://console.x.ai",
+        "steps": [
+          "Sign in to the xAI Console",
+          "Open API Keys and click Create API key",
+          "Copy the key and add credits"
+        ]
+      },
+      "billedBy": "xAI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "grok-4.7",
+          "name": "Grok 4.7",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 500000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "grok-4.20-0309-non-reasoning",
+          "name": "Grok 4.20 Fast",
+          "description": "Fast, no reasoning",
+          "quick": true,
+          "contextWindow": 1000000,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "mark": "Gq",
+      "hue": 30,
+      "description": "Very fast open models",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "gsk_…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://console.groq.com/keys",
+        "steps": [
+          "Sign in to the Groq Console",
+          "Open API Keys and click Create API Key",
+          "Copy the key"
+        ]
+      },
+      "billedBy": "Groq",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "openai/gpt-oss-120b",
+          "name": "GPT-OSS 120B",
+          "description": "Smartest, very fast",
+          "recommended": true,
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "openai/gpt-oss-20b",
+          "name": "GPT-OSS 20B",
+          "description": "Fast and low cost",
+          "quick": true,
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "llama-3.3-70b-versatile",
+          "name": "Llama 3.3 70B",
+          "description": "General chat, no reasoning",
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "siliconflow",
+      "name": "SiliconFlow",
+      "mark": "SF",
+      "hue": 295,
+      "aliases": [
+        "硅基流动"
+      ],
+      "description": "Open models hosted by SiliconFlow",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "sk-…"
+        },
+        {
+          "key": "base_url",
+          "kind": "choice",
+          "label": "Region",
+          "required": true,
+          "default": "https://api.siliconflow.cn/v1",
+          "options": [
+            {
+              "value": "https://api.siliconflow.cn/v1",
+              "label": "China (siliconflow.cn)"
+            },
+            {
+              "value": "https://api.siliconflow.com/v1",
+              "label": "International (siliconflow.com)"
+            }
+          ]
+        }
+      ],
+      "keyHelp": {
+        "url": "https://cloud.siliconflow.cn/account/ak",
+        "steps": [
+          "Sign in to SiliconFlow for your region",
+          "Open API Keys and click Create new key",
+          "Copy the key"
+        ]
+      },
+      "billedBy": "SiliconFlow",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Pro",
+          "name": "DeepSeek V4 Pro",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "zai-org/GLM-5.3",
+          "name": "GLM-5.3",
+          "description": "Strong coding and agents",
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V4-Flash",
+          "name": "DeepSeek V4 Flash",
+          "description": "Fast and low cost",
+          "quick": true,
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "mark": "T",
+      "hue": 235,
+      "description": "Open models in the cloud",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.together.ai/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true
+        }
+      ],
+      "keyHelp": {
+        "url": "https://api.together.ai/settings/api-keys",
+        "steps": [
+          "Sign in to Together AI",
+          "Open Settings → API keys",
+          "Create and copy a key"
+        ]
+      },
+      "billedBy": "Together AI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "moonshotai/Kimi-K3",
+          "name": "Kimi K3",
+          "description": "Best for complex work",
+          "recommended": true,
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "zai-org/GLM-5.3",
+          "name": "GLM-5.3",
+          "description": "Coding and agents",
+          "contextWindow": 1000000,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "openai/gpt-oss-120b",
+          "name": "GPT-OSS 120B",
+          "description": "Open model, low cost",
+          "quick": true,
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "fireworks",
+      "name": "Fireworks AI",
+      "mark": "F",
+      "hue": 30,
+      "description": "Open models in the cloud",
+      "auth": "api_key",
+      "adapter": "openai_compatible",
+      "baseUrl": "https://api.fireworks.ai/inference/v1",
+      "fields": [
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "required": true,
+          "placeholder": "fw_…"
+        }
+      ],
+      "keyHelp": {
+        "url": "https://app.fireworks.ai/settings/users/api-keys",
+        "steps": [
+          "Sign in to Fireworks",
+          "Open Settings → API Keys",
+          "Create and copy a key"
+        ]
+      },
+      "billedBy": "Fireworks AI",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "accounts/fireworks/models/glm-5p3",
+          "name": "GLM-5.3",
+          "description": "Strong coding and agents",
+          "recommended": true,
+          "contextWindow": 1048576,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        },
+        {
+          "id": "accounts/fireworks/models/kimi-k3",
+          "name": "Kimi K3",
+          "description": "Best for complex work",
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        },
+        {
+          "id": "accounts/fireworks/models/glm-5p3-flash",
+          "name": "GLM-5.3 Flash",
+          "description": "Fast, sees images",
+          "quick": true,
+          "contextWindow": 1048576,
+          "vision": true,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "mark": "Ol",
+      "hue": 0,
+      "neutral": true,
+      "aliases": [
+        "local",
+        "offline",
+        "llama"
+      ],
+      "description": "Run open models on this computer",
+      "auth": "local",
+      "adapter": "ollama",
+      "fields": [
+        {
+          "key": "api_host",
+          "kind": "text",
+          "label": "Host",
+          "required": true,
+          "default": "localhost"
+        },
+        {
+          "key": "api_port",
+          "kind": "number",
+          "label": "Port",
+          "required": true,
+          "default": 11434
+        }
+      ],
+      "billedBy": "Free, runs on this computer",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "qwen3.8",
+          "name": "Qwen3.8",
+          "description": "Best local all-rounder, sees images",
+          "recommended": true,
+          "contextWindow": 262144,
+          "vision": true,
+          "thinking": {
+            "off": {
+              "thinking_enabled": false
+            },
+            "standard": {
+              "thinking_enabled": true
+            }
+          }
+        },
+        {
+          "id": "gpt-oss:20b",
+          "name": "GPT-OSS 20B",
+          "description": "Solid local reasoning model",
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lmstudio",
+      "name": "LM Studio",
+      "mark": "LM",
+      "hue": 250,
+      "aliases": [
+        "local",
+        "offline"
+      ],
+      "description": "Run open models on this computer",
+      "auth": "local",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "base_url",
+          "kind": "url",
+          "label": "Server URL",
+          "required": true,
+          "default": "http://localhost:1234/v1"
+        }
+      ],
+      "billedBy": "Free, runs on this computer",
+      "allowCustomModel": true,
+      "models": [
+        {
+          "id": "openai/gpt-oss-20b",
+          "name": "GPT-OSS 20B",
+          "description": "Solid local reasoning model",
+          "recommended": true,
+          "contextWindow": 131072,
+          "thinking": {
+            "standard": {
+              "thinking_enabled": true,
+              "thinking_strength": "medium"
+            },
+            "deep": {
+              "thinking_enabled": true,
+              "thinking_strength": "high"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "custom",
+      "name": "Custom endpoint",
+      "mark": "API",
+      "hue": 0,
+      "neutral": true,
+      "aliases": [
+        "compatible",
+        "proxy",
+        "gateway",
+        "vllm",
+        "litellm",
+        "base url"
+      ],
+      "description": "Any OpenAI- or Anthropic-compatible API, such as a company gateway",
+      "auth": "custom",
+      "adapter": "openai_compatible",
+      "fields": [
+        {
+          "key": "base_url",
+          "kind": "url",
+          "label": "Base URL",
+          "required": true,
+          "placeholder": "https://gateway.example.com/v1"
+        },
+        {
+          "key": "api_key",
+          "kind": "secret",
+          "label": "API key",
+          "help": "Leave empty if the endpoint needs no key."
+        }
+      ],
+      "allowCustomModel": true,
+      "models": []
+    }
+  ]
+}
